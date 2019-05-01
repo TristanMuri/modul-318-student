@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransportTest", "tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M318TM", "WindowsFormsApp1\M318TM.csproj", "{2C43ED4A-2A13-4CC6-B98F-FE7385738FCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M318ProjektTM", "WindowsFormsApp1\M318ProjektTM.csproj", "{07964B53-58B1-46FD-A10F-FEB478B8B46B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2C43ED4A-2A13-4CC6-B98F-FE7385738FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C43ED4A-2A13-4CC6-B98F-FE7385738FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C43ED4A-2A13-4CC6-B98F-FE7385738FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79910833-B22D-402C-8AF0-7D80FB8247B4}</ProjectGuid>
+    <ProjectGuid>{07964B53-58B1-46FD-A10F-FEB478B8B46B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsApp1</RootNamespace>
     <AssemblyName>WindowsFormsApp1</AssemblyName>
@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Verbindungen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Verbindungen.Designer.cs">
+      <DependentUpon>Verbindungen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Verbindungen.resx">
+      <DependentUpon>Verbindungen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\SwissTransport\SwissTransport.csproj">
+      <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
+      <Name>SwissTransport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tests\SwissTransportTest\SwissTransportTest.csproj">
+      <Project>{959c6e54-5b1c-40f5-938a-c57b17451421}</Project>
+      <Name>SwissTransportTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
