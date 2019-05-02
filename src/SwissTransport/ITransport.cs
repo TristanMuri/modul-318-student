@@ -4,6 +4,6 @@
     {
         Stations GetStations(string query);
         StationBoardRoot GetStationBoard(string station, string id);
-        Connections GetConnections(string fromStation, string toStattion, string departureTime, string departureDate, int isArrivalTime);
+        Connections GetConnections(string fromStation, string toStattion, string departureTime, string departureDate, bool isArrivalTime);
     }
 }

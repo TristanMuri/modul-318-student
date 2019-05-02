@@ -25,13 +25,13 @@ namespace SwissTransport
             Assert.IsNotNull(stationBoard);
         }
 
-       /* [TestMethod]
+        [TestMethod]
         public void Connections()
         {
             testee = new Transport();
-            var connections = testee.GetConnections("Sursee", "Luzern");
+            var connections = testee.GetConnections("Sursee", "Luzern", "7:18", "03.04.2019", true);
 
             Assert.IsNotNull(connections);
-        } */
+        }
     }
 }

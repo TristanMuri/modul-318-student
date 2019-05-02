@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         Transport transport = new Transport();
         string departureTime = null;
         string departureDate = null;
-        int isArrivalTime = 1;
+        bool isArrivalTime = true;
 
         public Verbindungen()
         {
@@ -29,10 +29,12 @@ namespace WindowsFormsApp1
 
         private void buttonsuchen_Click(object sender, EventArgs e)
         {
-            string from = comboBoxvon.Text;
-            string to = comboBoxnach.Text;
+            SetIsArrivalTime();
+            SetDepartureDate();
+            SetDepartureTime();
+            lvConnections.Items.Clear();
+            lvConnections.Items.AddRange(GetConnection(comboBoxvon.Text, comboBoxnach.Text));
 
-                     
         }
 
         private void buttonclear_Click(object sender, EventArgs e)
@@ -78,15 +80,15 @@ namespace WindowsFormsApp1
         {
             //Lokale Variabeln
             Stations station = transport.GetStations(location);
-            List<string> toStationList = new List<string>();
+            List<string> nachStationList = new List<string>();
             foreach (var item in station.StationList)
             {
                 if (!string.IsNullOrEmpty(item.Name))
                 {
-                    toStationList.Add(item.Name);
+                    nachStationList.Add(item.Name);
                 }
             }
-            foreach (var item in toStationList)
+            foreach (var item in nachStationList)
             {
                 comboBoxnach.Items.Add(item);
             }
@@ -94,6 +96,68 @@ namespace WindowsFormsApp1
             {
                 comboBoxnach.SelectedIndex = 0;
             }
+        }
+
+        //Function to set the membervariable departureTime
+        private void SetDepartureTime()
+        {
+            departureTime = (TimePicker.Value.Hour) + ":" + TimePicker.Value.Minute;
+        }
+        //Function to set the memvervariable departureDate
+        private void SetDepartureDate()
+        {
+            departureDate = datePicker.Value.Year + "-" + datePicker.Value.Month + "-" + datePicker.Value.Day;
+        }
+        //Funtion to set the membervariable IsArrivalTime, 0 = false, 1 = true. 1 is default value
+        private void SetIsArrivalTime()
+        {
+            if (radioButtonabfahrt.Checked == true)
+            {
+                isArrivalTime = true;
+            }
+            else if (radioButtonAnkunft.Checked == true)
+            {
+                isArrivalTime = false;
+            }
+        }
+        //Function to get all connections into the ListView
+        private ListViewItem[] GetConnection(string vonStation, string nachStation)
+        {
+            Connections ConnectionListView;
+            try
+            {
+                ConnectionListView = transport.GetConnections(vonStation, nachStation, departureDate, departureTime, isArrivalTime);
+            }
+            catch (Exception e)
+            {
+                ListViewItem[] errorListItemView = new ListViewItem[1];
+                errorListItemView[0] = new ListViewItem("Fehler:\n");
+                errorListItemView[0].SubItems.Add(e.Message);
+                return errorListItemView;
+
+            }
+            ListViewItem[] listView = new ListViewItem[ConnectionListView.ConnectionList.Count];
+            for (int i = 0; i < ConnectionListView.ConnectionList.Count; i++)
+            {
+                listView[i] = new ListViewItem(ConnectionListView.ConnectionList[i].From.Station.Name);
+                listView[i].SubItems.Add(ConnectionListView.ConnectionList[i].To.Station.Name);
+                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].From.Departure).ToShortTimeString());
+                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].To.Arrival).ToShortTimeString());
+                listView[i].SubItems.Add(TimeSpan.Parse(ConnectionListView.ConnectionList[i].Duration.Substring(3)).TotalMinutes.ToString() + " Min");
+            }
+            return listView;
+        }
+
+        private void buttonswitch_Click(object sender, EventArgs e)
+        {
+            string bswitch = comboBoxnach.Text;
+            comboBoxnach.Text = comboBoxvon.Text;
+            comboBoxvon.Text = bswitch;
+        }
+
+        private void buttonclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
