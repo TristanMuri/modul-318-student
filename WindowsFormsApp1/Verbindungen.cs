@@ -20,14 +20,21 @@ namespace WindowsFormsApp1
         string departureDate = null;
         bool isArrivalTime = true;
 
+
         public Verbindungen()
         {
             InitializeComponent();
+
+
+            this.comboBoxvon.FormattingEnabled = true;
+           
+
+            
         }
 
-        //Events
+    //Events
 
-        private void buttonsuchen_Click(object sender, EventArgs e)
+    private void buttonsuchen_Click(object sender, EventArgs e)
         {
             SetIsArrivalTime();
             SetDepartureDate();
@@ -158,6 +165,18 @@ namespace WindowsFormsApp1
         private void buttonclose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void autocomplete(object sender, EventArgs e)
+        {
+           // comboBoxvon.Items.Clear();
+           // nachStation(comboBoxvon.Text, comboBoxvon);
+        }
+
+        private void buttonabfahrtstafel_Click(object sender, EventArgs e)
+        {
+            Abfahrtstafel f2 = new Abfahrtstafel();
+            f2.ShowDialog();
         }
     }
 }

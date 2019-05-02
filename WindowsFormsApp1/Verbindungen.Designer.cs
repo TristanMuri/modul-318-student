@@ -48,6 +48,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonabfahrtstafel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // comboBoxnach
             // 
             this.comboBoxnach.FormattingEnabled = true;
-            this.comboBoxnach.Location = new System.Drawing.Point(282, 56);
+            this.comboBoxnach.Location = new System.Drawing.Point(282, 46);
             this.comboBoxnach.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxnach.Name = "comboBoxnach";
             this.comboBoxnach.Size = new System.Drawing.Size(92, 21);
@@ -144,7 +145,7 @@
             // 
             // comboBoxvon
             // 
-            this.comboBoxvon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxvon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxvon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxvon.FormattingEnabled = true;
             this.comboBoxvon.Location = new System.Drawing.Point(30, 46);
@@ -152,6 +153,7 @@
             this.comboBoxvon.Name = "comboBoxvon";
             this.comboBoxvon.Size = new System.Drawing.Size(92, 21);
             this.comboBoxvon.TabIndex = 12;
+            this.comboBoxvon.TextChanged += new System.EventHandler(this.autocomplete);
             // 
             // panel1
             // 
@@ -228,11 +230,22 @@
             this.columnHeader5.Text = "Dauer";
             this.columnHeader5.Width = 55;
             // 
+            // buttonabfahrtstafel
+            // 
+            this.buttonabfahrtstafel.Location = new System.Drawing.Point(450, 46);
+            this.buttonabfahrtstafel.Name = "buttonabfahrtstafel";
+            this.buttonabfahrtstafel.Size = new System.Drawing.Size(83, 23);
+            this.buttonabfahrtstafel.TabIndex = 34;
+            this.buttonabfahrtstafel.Text = "Abfahrtstafel";
+            this.buttonabfahrtstafel.UseVisualStyleBackColor = true;
+            this.buttonabfahrtstafel.Click += new System.EventHandler(this.buttonabfahrtstafel_Click);
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 366);
+            this.Controls.Add(this.buttonabfahrtstafel);
             this.Controls.Add(this.lvConnections);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBoxvon);
@@ -276,6 +289,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button buttonabfahrtstafel;
     }
 }
 
