@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
         Transport transport = new Transport();
         string departureTime = null;
         string departureDate = null;
-        bool isArrivalTime = true;
 
 
         public Verbindungen()
@@ -31,7 +30,6 @@ namespace WindowsFormsApp1
 
     private void buttonsuchen_Click(object sender, EventArgs e)
         {
-            SetIsArrivalTime();
             SetDepartureDate();
             SetDepartureTime();
             lvConnections.Items.Clear();
@@ -110,25 +108,14 @@ namespace WindowsFormsApp1
         {
             departureDate = datePicker.Value.Year + "-" + datePicker.Value.Month + "-" + datePicker.Value.Day;
         }
-        //Funtion to set the membervariable IsArrivalTime, 0 = false, 1 = true. 1 is default value
-        private void SetIsArrivalTime()
-        {
-            if (radioButtonabfahrt.Checked == true)
-            {
-                isArrivalTime = true;
-            }
-            else if (radioButtonAnkunft.Checked == true)
-            {
-                isArrivalTime = false;
-            }
-        }
+        
         //Function to get all connections into the ListView
         private ListViewItem[] GetConnection(string vonStation, string nachStation)
         {
             Connections ConnectionListView;
             try
             {
-                ConnectionListView = transport.GetConnections(vonStation, nachStation, departureDate, departureTime, isArrivalTime);
+                ConnectionListView = transport.GetConnections(vonStation, nachStation, departureTime, departureDate);
             }
             catch (Exception e)
             {
