@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verbindungen));
             this.buttonswitch = new System.Windows.Forms.Button();
-            this.comboBoxnach = new System.Windows.Forms.ComboBox();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.buttonsuchen = new System.Windows.Forms.Button();
@@ -38,7 +37,6 @@
             this.labelvon = new System.Windows.Forms.Label();
             this.labelnach = new System.Windows.Forms.Label();
             this.buttonclear = new System.Windows.Forms.Button();
-            this.comboBoxvon = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonAnkunft = new System.Windows.Forms.RadioButton();
             this.radioButtonabfahrt = new System.Windows.Forms.RadioButton();
@@ -49,53 +47,48 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonabfahrtstafel = new System.Windows.Forms.Button();
+            this.listvonStation = new System.Windows.Forms.ListBox();
+            this.textBoxvon = new System.Windows.Forms.TextBox();
+            this.listnachstation = new System.Windows.Forms.ListBox();
+            this.textBoxnach = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonswitch
             // 
             this.buttonswitch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonswitch.BackgroundImage")));
-            this.buttonswitch.Location = new System.Drawing.Point(188, 34);
-            this.buttonswitch.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonswitch.Location = new System.Drawing.Point(251, 42);
+            this.buttonswitch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonswitch.Name = "buttonswitch";
-            this.buttonswitch.Size = new System.Drawing.Size(40, 43);
+            this.buttonswitch.Size = new System.Drawing.Size(53, 53);
             this.buttonswitch.TabIndex = 0;
             this.buttonswitch.UseVisualStyleBackColor = true;
             this.buttonswitch.Click += new System.EventHandler(this.buttonswitch_Click);
             // 
-            // comboBoxnach
-            // 
-            this.comboBoxnach.FormattingEnabled = true;
-            this.comboBoxnach.Location = new System.Drawing.Point(282, 46);
-            this.comboBoxnach.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxnach.Name = "comboBoxnach";
-            this.comboBoxnach.Size = new System.Drawing.Size(92, 21);
-            this.comboBoxnach.TabIndex = 2;
-            // 
             // TimePicker
             // 
             this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimePicker.Location = new System.Drawing.Point(31, 96);
-            this.TimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.TimePicker.Location = new System.Drawing.Point(41, 118);
+            this.TimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TimePicker.Name = "TimePicker";
-            this.TimePicker.Size = new System.Drawing.Size(56, 20);
+            this.TimePicker.Size = new System.Drawing.Size(73, 22);
             this.TimePicker.TabIndex = 4;
             // 
             // datePicker
             // 
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.Location = new System.Drawing.Point(301, 96);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker.Location = new System.Drawing.Point(401, 118);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(73, 20);
+            this.datePicker.Size = new System.Drawing.Size(96, 22);
             this.datePicker.TabIndex = 5;
             // 
             // buttonsuchen
             // 
-            this.buttonsuchen.Location = new System.Drawing.Point(318, 143);
-            this.buttonsuchen.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonsuchen.Location = new System.Drawing.Point(424, 176);
+            this.buttonsuchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonsuchen.Name = "buttonsuchen";
-            this.buttonsuchen.Size = new System.Drawing.Size(56, 19);
+            this.buttonsuchen.Size = new System.Drawing.Size(75, 23);
             this.buttonsuchen.TabIndex = 6;
             this.buttonsuchen.Text = "Suchen";
             this.buttonsuchen.UseVisualStyleBackColor = true;
@@ -103,10 +96,10 @@
             // 
             // buttonclose
             // 
-            this.buttonclose.Location = new System.Drawing.Point(495, 317);
-            this.buttonclose.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonclose.Location = new System.Drawing.Point(660, 390);
+            this.buttonclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonclose.Name = "buttonclose";
-            this.buttonclose.Size = new System.Drawing.Size(56, 19);
+            this.buttonclose.Size = new System.Drawing.Size(75, 23);
             this.buttonclose.TabIndex = 7;
             this.buttonclose.Text = "Close";
             this.buttonclose.UseVisualStyleBackColor = true;
@@ -115,63 +108,49 @@
             // labelvon
             // 
             this.labelvon.AutoSize = true;
-            this.labelvon.Location = new System.Drawing.Point(28, 30);
-            this.labelvon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelvon.Location = new System.Drawing.Point(37, 37);
             this.labelvon.Name = "labelvon";
-            this.labelvon.Size = new System.Drawing.Size(25, 13);
+            this.labelvon.Size = new System.Drawing.Size(31, 17);
             this.labelvon.TabIndex = 8;
             this.labelvon.Text = "von";
             // 
             // labelnach
             // 
             this.labelnach.AutoSize = true;
-            this.labelnach.Location = new System.Drawing.Point(279, 23);
-            this.labelnach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelnach.Location = new System.Drawing.Point(349, 36);
             this.labelnach.Name = "labelnach";
-            this.labelnach.Size = new System.Drawing.Size(31, 13);
+            this.labelnach.Size = new System.Drawing.Size(39, 17);
             this.labelnach.TabIndex = 9;
             this.labelnach.Text = "nach";
             // 
             // buttonclear
             // 
-            this.buttonclear.Location = new System.Drawing.Point(318, 120);
-            this.buttonclear.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonclear.Location = new System.Drawing.Point(424, 148);
+            this.buttonclear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonclear.Name = "buttonclear";
-            this.buttonclear.Size = new System.Drawing.Size(56, 19);
+            this.buttonclear.Size = new System.Drawing.Size(75, 23);
             this.buttonclear.TabIndex = 10;
             this.buttonclear.Text = "clear";
             this.buttonclear.UseVisualStyleBackColor = true;
             this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
             // 
-            // comboBoxvon
-            // 
-            this.comboBoxvon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxvon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxvon.FormattingEnabled = true;
-            this.comboBoxvon.Location = new System.Drawing.Point(30, 46);
-            this.comboBoxvon.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxvon.Name = "comboBoxvon";
-            this.comboBoxvon.Size = new System.Drawing.Size(92, 21);
-            this.comboBoxvon.TabIndex = 12;
-            this.comboBoxvon.TextChanged += new System.EventHandler(this.autocomplete);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.radioButtonAnkunft);
             this.panel1.Controls.Add(this.radioButtonabfahrt);
-            this.panel1.Location = new System.Drawing.Point(31, 134);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(41, 165);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 27);
+            this.panel1.Size = new System.Drawing.Size(187, 33);
             this.panel1.TabIndex = 14;
             // 
             // radioButtonAnkunft
             // 
             this.radioButtonAnkunft.AutoSize = true;
-            this.radioButtonAnkunft.Location = new System.Drawing.Point(74, 2);
-            this.radioButtonAnkunft.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonAnkunft.Location = new System.Drawing.Point(99, 2);
+            this.radioButtonAnkunft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAnkunft.Name = "radioButtonAnkunft";
-            this.radioButtonAnkunft.Size = new System.Drawing.Size(62, 17);
+            this.radioButtonAnkunft.Size = new System.Drawing.Size(77, 21);
             this.radioButtonAnkunft.TabIndex = 1;
             this.radioButtonAnkunft.TabStop = true;
             this.radioButtonAnkunft.Text = "Ankunft";
@@ -180,10 +159,10 @@
             // radioButtonabfahrt
             // 
             this.radioButtonabfahrt.AutoSize = true;
-            this.radioButtonabfahrt.Location = new System.Drawing.Point(2, 2);
-            this.radioButtonabfahrt.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonabfahrt.Location = new System.Drawing.Point(3, 2);
+            this.radioButtonabfahrt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonabfahrt.Name = "radioButtonabfahrt";
-            this.radioButtonabfahrt.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonabfahrt.Size = new System.Drawing.Size(75, 21);
             this.radioButtonabfahrt.TabIndex = 0;
             this.radioButtonabfahrt.TabStop = true;
             this.radioButtonabfahrt.Text = "Abfahrt";
@@ -197,9 +176,10 @@
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5});
-            this.lvConnections.Location = new System.Drawing.Point(12, 179);
+            this.lvConnections.Location = new System.Drawing.Point(16, 220);
+            this.lvConnections.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvConnections.Name = "lvConnections";
-            this.lvConnections.Size = new System.Drawing.Size(555, 123);
+            this.lvConnections.Size = new System.Drawing.Size(739, 150);
             this.lvConnections.TabIndex = 33;
             this.lvConnections.TileSize = new System.Drawing.Size(168, 30);
             this.lvConnections.UseCompatibleStateImageBehavior = false;
@@ -232,23 +212,67 @@
             // 
             // buttonabfahrtstafel
             // 
-            this.buttonabfahrtstafel.Location = new System.Drawing.Point(450, 46);
+            this.buttonabfahrtstafel.Location = new System.Drawing.Point(600, 57);
+            this.buttonabfahrtstafel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonabfahrtstafel.Name = "buttonabfahrtstafel";
-            this.buttonabfahrtstafel.Size = new System.Drawing.Size(83, 23);
+            this.buttonabfahrtstafel.Size = new System.Drawing.Size(111, 28);
             this.buttonabfahrtstafel.TabIndex = 34;
             this.buttonabfahrtstafel.Text = "Abfahrtstafel";
             this.buttonabfahrtstafel.UseVisualStyleBackColor = true;
             this.buttonabfahrtstafel.Click += new System.EventHandler(this.buttonabfahrtstafel_Click);
             // 
+            // listvonStation
+            // 
+            this.listvonStation.FormattingEnabled = true;
+            this.listvonStation.ItemHeight = 16;
+            this.listvonStation.Location = new System.Drawing.Point(40, 89);
+            this.listvonStation.Margin = new System.Windows.Forms.Padding(4);
+            this.listvonStation.Name = "listvonStation";
+            this.listvonStation.Size = new System.Drawing.Size(161, 20);
+            this.listvonStation.TabIndex = 38;
+            this.listvonStation.Click += new System.EventHandler(this.listclickautocompletevon);
+            // 
+            // textBoxvon
+            // 
+            this.textBoxvon.Location = new System.Drawing.Point(40, 57);
+            this.textBoxvon.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxvon.Name = "textBoxvon";
+            this.textBoxvon.Size = new System.Drawing.Size(161, 22);
+            this.textBoxvon.TabIndex = 37;
+            this.textBoxvon.TextChanged += new System.EventHandler(this.txtchangevonstation);
+            // 
+            // listnachstation
+            // 
+            this.listnachstation.FormattingEnabled = true;
+            this.listnachstation.ItemHeight = 16;
+            this.listnachstation.Location = new System.Drawing.Point(352, 89);
+            this.listnachstation.Margin = new System.Windows.Forms.Padding(4);
+            this.listnachstation.Name = "listnachstation";
+            this.listnachstation.Size = new System.Drawing.Size(161, 20);
+            this.listnachstation.TabIndex = 40;
+            this.listnachstation.Click += new System.EventHandler(this.listclickautocompletenach);
+            // 
+            // textBoxnach
+            // 
+            this.textBoxnach.Location = new System.Drawing.Point(352, 57);
+            this.textBoxnach.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxnach.Name = "textBoxnach";
+            this.textBoxnach.Size = new System.Drawing.Size(161, 22);
+            this.textBoxnach.TabIndex = 39;
+            this.textBoxnach.TextChanged += new System.EventHandler(this.txtchangenachstation);
+            // 
             // Verbindungen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 366);
+            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.listnachstation);
+            this.Controls.Add(this.textBoxnach);
+            this.Controls.Add(this.listvonStation);
+            this.Controls.Add(this.textBoxvon);
             this.Controls.Add(this.buttonabfahrtstafel);
             this.Controls.Add(this.lvConnections);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBoxvon);
             this.Controls.Add(this.buttonclear);
             this.Controls.Add(this.labelnach);
             this.Controls.Add(this.labelvon);
@@ -256,9 +280,8 @@
             this.Controls.Add(this.buttonsuchen);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.TimePicker);
-            this.Controls.Add(this.comboBoxnach);
             this.Controls.Add(this.buttonswitch);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Verbindungen";
             this.Text = "Verbindungen";
             this.panel1.ResumeLayout(false);
@@ -271,7 +294,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonswitch;
-        private System.Windows.Forms.ComboBox comboBoxnach;
         private System.Windows.Forms.DateTimePicker TimePicker;
         private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Button buttonsuchen;
@@ -279,7 +301,6 @@
         private System.Windows.Forms.Label labelvon;
         private System.Windows.Forms.Label labelnach;
         private System.Windows.Forms.Button buttonclear;
-        private System.Windows.Forms.ComboBox comboBoxvon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButtonAnkunft;
         private System.Windows.Forms.RadioButton radioButtonabfahrt;
@@ -290,6 +311,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button buttonabfahrtstafel;
+        private System.Windows.Forms.ListBox listvonStation;
+        private System.Windows.Forms.TextBox textBoxvon;
+        private System.Windows.Forms.ListBox listnachstation;
+        private System.Windows.Forms.TextBox textBoxnach;
     }
 }
 

@@ -24,11 +24,6 @@ namespace WindowsFormsApp1
         public Verbindungen()
         {
             InitializeComponent();
-
-
-            this.comboBoxvon.FormattingEnabled = true;
-           
-
             
         }
 
@@ -40,28 +35,28 @@ namespace WindowsFormsApp1
             SetDepartureDate();
             SetDepartureTime();
             lvConnections.Items.Clear();
-            lvConnections.Items.AddRange(GetConnection(comboBoxvon.Text, comboBoxnach.Text));
+            lvConnections.Items.AddRange(GetConnection(listvonStation.Text, listnachstation.Text));
 
         }
 
         private void buttonclear_Click(object sender, EventArgs e)
         {
-            comboBoxvon.Text = null;
-            comboBoxnach.Text = null;
+            textBoxvon.Text = null;
+            textBoxnach.Text = null;
 
-            comboBoxnach.Items.Clear();
-            comboBoxvon.Items.Clear();
+            listnachstation.Items.Clear();
+            listvonStation.Items.Clear();
         }
 
         private void comborefresh(object sender, EventArgs e)
         {
-            comboBoxvon.Items.Clear();
+            listvonStation.Items.Clear();
             
         }
 
         //Funktionen
 
-        private void vonStation(string location, ComboBox comboBoxvon)
+        private void vonStation(string location, ListBox listvonstation)
         {
             //Lokale Variablen
             Stations station = transport.GetStations(location);
@@ -75,11 +70,11 @@ namespace WindowsFormsApp1
             }
             foreach (var item in vonStationList)
             {
-                comboBoxvon.Items.Add(item);
+                listvonStation.Items.Add(item);
             }
-            if (comboBoxvon.Items.Count > 0)
+            if (listvonStation.Items.Count > 0)
             {
-                comboBoxvon.SelectedIndex = 0;
+                listvonStation.SelectedIndex = 0;
             }
         }
 
@@ -97,11 +92,11 @@ namespace WindowsFormsApp1
             }
             foreach (var item in nachStationList)
             {
-                comboBoxnach.Items.Add(item);
+                listnachstation.Items.Add(item);
             }
-            if (comboBoxnach.Items.Count > 0)
+            if (listnachstation.Items.Count > 0)
             {
-                comboBoxnach.SelectedIndex = 0;
+                listnachstation.SelectedIndex = 0;
             }
         }
 
@@ -154,12 +149,34 @@ namespace WindowsFormsApp1
             }
             return listView;
         }
+        private void StationSuchen(ListBox aktuelleListBox, TextBox aktuelleTextBox, string gesuchteStation)
+        {
+            Stations Station = transport.GetStations(gesuchteStation);
+
+            aktuelleListBox.Items.Clear();
+            //aktuelleTextBox.Select(aktuelleTextBox.Text.Length, 0);
+
+            foreach (Station s in Station.StationList)
+            {
+                try
+                {
+                    if (s.Id != null)
+                    {
+                        aktuelleListBox.Items.Add(s.Name);
+                    }
+                }
+                catch
+                {
+                    ListViewItem verbindungsTabelle = new ListViewItem("Verbindung konnte nicht angezeigt werden", 0);
+                }
+            }
+        }
 
         private void buttonswitch_Click(object sender, EventArgs e)
         {
-            string bswitch = comboBoxnach.Text;
-            comboBoxnach.Text = comboBoxvon.Text;
-            comboBoxvon.Text = bswitch;
+            string bswitch = textBoxnach.Text;
+            textBoxnach.Text = textBoxvon.Text;
+            textBoxvon.Text = bswitch;
         }
 
         private void buttonclose_Click(object sender, EventArgs e)
@@ -167,16 +184,36 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void autocomplete(object sender, EventArgs e)
-        {
-           // comboBoxvon.Items.Clear();
-           // nachStation(comboBoxvon.Text, comboBoxvon);
-        }
-
         private void buttonabfahrtstafel_Click(object sender, EventArgs e)
         {
             Abfahrtstafel f2 = new Abfahrtstafel();
             f2.ShowDialog();
+        }
+
+        private void txtchangevonstation(object sender, EventArgs e)
+        {
+            StationSuchen(listvonStation, textBoxvon, textBoxvon.Text);
+
+            if (this.listvonStation.Items.Count > 0)
+                this.listvonStation.SelectedIndex = 0;
+        }
+
+        private void txtchangenachstation(object sender, EventArgs e)
+        {
+            StationSuchen(listnachstation, textBoxnach, textBoxnach.Text);
+
+            if (this.listnachstation.Items.Count > 0)
+                this.listnachstation.SelectedIndex = 0;
+        }
+
+        private void listclickautocompletenach(object sender, EventArgs e)
+        {
+            textBoxnach.Text = listnachstation.GetItemText(listnachstation.SelectedItem);
+        }
+
+        private void listclickautocompletevon(object sender, EventArgs e)
+        {
+            textBoxvon.Text = listvonStation.GetItemText(listvonStation.SelectedItem);
         }
     }
 }

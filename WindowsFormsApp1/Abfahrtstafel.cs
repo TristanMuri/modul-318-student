@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
 
         private void ltstationclick(object sender, EventArgs e)
         {
-
+            textBoxAbfahrtstabelle.Text = listStation.GetItemText(listStation.SelectedItem);
         }
     }
 }
