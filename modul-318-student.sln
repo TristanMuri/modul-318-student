@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M318TM", "WindowsFormsApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M318ProjektTM", "WindowsFormsApp1\M318ProjektTM.csproj", "{07964B53-58B1-46FD-A10F-FEB478B8B46B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProjekt318TM", "SetupProjekt318TM\SetupProjekt318TM.vdproj", "{D28238FE-0FDB-4843-B1CF-FF734C522837}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07964B53-58B1-46FD-A10F-FEB478B8B46B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28238FE-0FDB-4843-B1CF-FF734C522837}.Debug|Any CPU.ActiveCfg = Debug
+		{D28238FE-0FDB-4843-B1CF-FF734C522837}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

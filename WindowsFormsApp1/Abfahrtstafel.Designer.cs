@@ -30,8 +30,6 @@
         {
             this.textBoxAbfahrtstabelle = new System.Windows.Forms.TextBox();
             this.listStation = new System.Windows.Forms.ListBox();
-            this.TimePicker = new System.Windows.Forms.DateTimePicker();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.buttonabfahrtsuchen = new System.Windows.Forms.Button();
             this.lvAbfahrt = new System.Windows.Forms.ListView();
             this.Kategorie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,46 +39,30 @@
             // 
             // textBoxAbfahrtstabelle
             // 
-            this.textBoxAbfahrtstabelle.Location = new System.Drawing.Point(12, 33);
+            this.textBoxAbfahrtstabelle.Location = new System.Drawing.Point(16, 41);
+            this.textBoxAbfahrtstabelle.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAbfahrtstabelle.Name = "textBoxAbfahrtstabelle";
-            this.textBoxAbfahrtstabelle.Size = new System.Drawing.Size(122, 20);
+            this.textBoxAbfahrtstabelle.Size = new System.Drawing.Size(161, 22);
             this.textBoxAbfahrtstabelle.TabIndex = 35;
             this.textBoxAbfahrtstabelle.TextChanged += new System.EventHandler(this.textchanged);
             // 
             // listStation
             // 
             this.listStation.FormattingEnabled = true;
-            this.listStation.Location = new System.Drawing.Point(12, 59);
+            this.listStation.ItemHeight = 16;
+            this.listStation.Location = new System.Drawing.Point(16, 73);
+            this.listStation.Margin = new System.Windows.Forms.Padding(4);
             this.listStation.Name = "listStation";
-            this.listStation.Size = new System.Drawing.Size(122, 17);
+            this.listStation.Size = new System.Drawing.Size(161, 20);
             this.listStation.TabIndex = 36;
             this.listStation.Click += new System.EventHandler(this.liststationclick);
             // 
-            // TimePicker
-            // 
-            this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimePicker.Location = new System.Drawing.Point(242, 33);
-            this.TimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TimePicker.Name = "TimePicker";
-            this.TimePicker.ShowUpDown = true;
-            this.TimePicker.Size = new System.Drawing.Size(84, 20);
-            this.TimePicker.TabIndex = 37;
-            // 
-            // datePicker
-            // 
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.Location = new System.Drawing.Point(218, 58);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(73, 20);
-            this.datePicker.TabIndex = 38;
-            // 
             // buttonabfahrtsuchen
             // 
-            this.buttonabfahrtsuchen.Location = new System.Drawing.Point(145, 32);
-            this.buttonabfahrtsuchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonabfahrtsuchen.Location = new System.Drawing.Point(193, 39);
+            this.buttonabfahrtsuchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonabfahrtsuchen.Name = "buttonabfahrtsuchen";
-            this.buttonabfahrtsuchen.Size = new System.Drawing.Size(56, 19);
+            this.buttonabfahrtsuchen.Size = new System.Drawing.Size(75, 23);
             this.buttonabfahrtsuchen.TabIndex = 39;
             this.buttonabfahrtsuchen.Text = "Suchen";
             this.buttonabfahrtsuchen.UseVisualStyleBackColor = true;
@@ -92,10 +74,10 @@
             this.Kategorie,
             this.Numemer,
             this.Nach});
-            this.lvAbfahrt.Location = new System.Drawing.Point(12, 93);
-            this.lvAbfahrt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvAbfahrt.Location = new System.Drawing.Point(16, 114);
+            this.lvAbfahrt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvAbfahrt.Name = "lvAbfahrt";
-            this.lvAbfahrt.Size = new System.Drawing.Size(336, 124);
+            this.lvAbfahrt.Size = new System.Drawing.Size(447, 152);
             this.lvAbfahrt.TabIndex = 40;
             this.lvAbfahrt.UseCompatibleStateImageBehavior = false;
             this.lvAbfahrt.View = System.Windows.Forms.View.Details;
@@ -117,15 +99,14 @@
             // 
             // Abfahrtstafel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 258);
+            this.ClientSize = new System.Drawing.Size(496, 318);
             this.Controls.Add(this.lvAbfahrt);
             this.Controls.Add(this.buttonabfahrtsuchen);
-            this.Controls.Add(this.datePicker);
-            this.Controls.Add(this.TimePicker);
             this.Controls.Add(this.listStation);
             this.Controls.Add(this.textBoxAbfahrtstabelle);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Abfahrtstafel";
             this.Text = "Abfahrts Tafel";
             this.ResumeLayout(false);
@@ -136,8 +117,6 @@
         #endregion
         private System.Windows.Forms.TextBox textBoxAbfahrtstabelle;
         private System.Windows.Forms.ListBox listStation;
-        private System.Windows.Forms.DateTimePicker TimePicker;
-        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Button buttonabfahrtsuchen;
         private System.Windows.Forms.ListView lvAbfahrt;
         private System.Windows.Forms.ColumnHeader Kategorie;

@@ -48,15 +48,17 @@
             this.textBoxvon = new System.Windows.Forms.TextBox();
             this.listnachstation = new System.Windows.Forms.ListBox();
             this.textBoxnach = new System.Windows.Forms.TextBox();
+            this.buttonlocation = new System.Windows.Forms.Button();
+            this.buttonmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonswitch
             // 
             this.buttonswitch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonswitch.BackgroundImage")));
-            this.buttonswitch.Location = new System.Drawing.Point(251, 42);
-            this.buttonswitch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonswitch.Location = new System.Drawing.Point(188, 34);
+            this.buttonswitch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonswitch.Name = "buttonswitch";
-            this.buttonswitch.Size = new System.Drawing.Size(53, 53);
+            this.buttonswitch.Size = new System.Drawing.Size(40, 43);
             this.buttonswitch.TabIndex = 0;
             this.buttonswitch.UseVisualStyleBackColor = true;
             this.buttonswitch.Click += new System.EventHandler(this.buttonswitch_Click);
@@ -64,28 +66,28 @@
             // TimePicker
             // 
             this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimePicker.Location = new System.Drawing.Point(40, 176);
-            this.TimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TimePicker.Location = new System.Drawing.Point(30, 143);
+            this.TimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimePicker.Name = "TimePicker";
             this.TimePicker.ShowUpDown = true;
-            this.TimePicker.Size = new System.Drawing.Size(110, 22);
+            this.TimePicker.Size = new System.Drawing.Size(84, 20);
             this.TimePicker.TabIndex = 4;
             // 
             // datePicker
             // 
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.Location = new System.Drawing.Point(183, 176);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datePicker.Location = new System.Drawing.Point(137, 143);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(96, 22);
+            this.datePicker.Size = new System.Drawing.Size(73, 20);
             this.datePicker.TabIndex = 5;
             // 
             // buttonsuchen
             // 
-            this.buttonsuchen.Location = new System.Drawing.Point(542, 57);
-            this.buttonsuchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonsuchen.Location = new System.Drawing.Point(406, 46);
+            this.buttonsuchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonsuchen.Name = "buttonsuchen";
-            this.buttonsuchen.Size = new System.Drawing.Size(75, 23);
+            this.buttonsuchen.Size = new System.Drawing.Size(56, 19);
             this.buttonsuchen.TabIndex = 6;
             this.buttonsuchen.Text = "Suchen";
             this.buttonsuchen.UseVisualStyleBackColor = true;
@@ -93,10 +95,10 @@
             // 
             // buttonclose
             // 
-            this.buttonclose.Location = new System.Drawing.Point(660, 390);
-            this.buttonclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonclose.Location = new System.Drawing.Point(495, 317);
+            this.buttonclose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonclose.Name = "buttonclose";
-            this.buttonclose.Size = new System.Drawing.Size(75, 23);
+            this.buttonclose.Size = new System.Drawing.Size(56, 19);
             this.buttonclose.TabIndex = 7;
             this.buttonclose.Text = "Close";
             this.buttonclose.UseVisualStyleBackColor = true;
@@ -105,27 +107,29 @@
             // labelvon
             // 
             this.labelvon.AutoSize = true;
-            this.labelvon.Location = new System.Drawing.Point(37, 37);
+            this.labelvon.Location = new System.Drawing.Point(28, 30);
+            this.labelvon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelvon.Name = "labelvon";
-            this.labelvon.Size = new System.Drawing.Size(31, 17);
+            this.labelvon.Size = new System.Drawing.Size(25, 13);
             this.labelvon.TabIndex = 8;
             this.labelvon.Text = "von";
             // 
             // labelnach
             // 
             this.labelnach.AutoSize = true;
-            this.labelnach.Location = new System.Drawing.Point(349, 36);
+            this.labelnach.Location = new System.Drawing.Point(262, 29);
+            this.labelnach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelnach.Name = "labelnach";
-            this.labelnach.Size = new System.Drawing.Size(39, 17);
+            this.labelnach.Size = new System.Drawing.Size(31, 13);
             this.labelnach.TabIndex = 9;
             this.labelnach.Text = "nach";
             // 
             // buttonclear
             // 
-            this.buttonclear.Location = new System.Drawing.Point(542, 120);
-            this.buttonclear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonclear.Location = new System.Drawing.Point(406, 98);
+            this.buttonclear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonclear.Name = "buttonclear";
-            this.buttonclear.Size = new System.Drawing.Size(75, 23);
+            this.buttonclear.Size = new System.Drawing.Size(56, 19);
             this.buttonclear.TabIndex = 10;
             this.buttonclear.Text = "clear";
             this.buttonclear.UseVisualStyleBackColor = true;
@@ -139,10 +143,9 @@
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5});
-            this.lvConnections.Location = new System.Drawing.Point(13, 222);
-            this.lvConnections.Margin = new System.Windows.Forms.Padding(4);
+            this.lvConnections.Location = new System.Drawing.Point(10, 180);
             this.lvConnections.Name = "lvConnections";
-            this.lvConnections.Size = new System.Drawing.Size(739, 150);
+            this.lvConnections.Size = new System.Drawing.Size(555, 123);
             this.lvConnections.TabIndex = 33;
             this.lvConnections.TileSize = new System.Drawing.Size(168, 30);
             this.lvConnections.UseCompatibleStateImageBehavior = false;
@@ -175,10 +178,9 @@
             // 
             // buttonabfahrtstafel
             // 
-            this.buttonabfahrtstafel.Location = new System.Drawing.Point(352, 176);
-            this.buttonabfahrtstafel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonabfahrtstafel.Location = new System.Drawing.Point(264, 143);
             this.buttonabfahrtstafel.Name = "buttonabfahrtstafel";
-            this.buttonabfahrtstafel.Size = new System.Drawing.Size(111, 28);
+            this.buttonabfahrtstafel.Size = new System.Drawing.Size(83, 23);
             this.buttonabfahrtstafel.TabIndex = 34;
             this.buttonabfahrtstafel.Text = "Abfahrtstafel";
             this.buttonabfahrtstafel.UseVisualStyleBackColor = true;
@@ -187,48 +189,66 @@
             // listvonStation
             // 
             this.listvonStation.FormattingEnabled = true;
-            this.listvonStation.ItemHeight = 16;
-            this.listvonStation.Location = new System.Drawing.Point(40, 89);
-            this.listvonStation.Margin = new System.Windows.Forms.Padding(4);
+            this.listvonStation.Location = new System.Drawing.Point(30, 72);
             this.listvonStation.Name = "listvonStation";
-            this.listvonStation.Size = new System.Drawing.Size(161, 68);
+            this.listvonStation.Size = new System.Drawing.Size(122, 56);
             this.listvonStation.TabIndex = 38;
             this.listvonStation.Click += new System.EventHandler(this.listclickautocompletevon);
             // 
             // textBoxvon
             // 
-            this.textBoxvon.Location = new System.Drawing.Point(40, 57);
-            this.textBoxvon.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxvon.Location = new System.Drawing.Point(30, 46);
             this.textBoxvon.Name = "textBoxvon";
-            this.textBoxvon.Size = new System.Drawing.Size(161, 22);
+            this.textBoxvon.Size = new System.Drawing.Size(122, 20);
             this.textBoxvon.TabIndex = 37;
             this.textBoxvon.TextChanged += new System.EventHandler(this.txtchangevonstation);
             // 
             // listnachstation
             // 
             this.listnachstation.FormattingEnabled = true;
-            this.listnachstation.ItemHeight = 16;
-            this.listnachstation.Location = new System.Drawing.Point(352, 89);
-            this.listnachstation.Margin = new System.Windows.Forms.Padding(4);
+            this.listnachstation.Location = new System.Drawing.Point(264, 72);
             this.listnachstation.Name = "listnachstation";
-            this.listnachstation.Size = new System.Drawing.Size(161, 68);
+            this.listnachstation.Size = new System.Drawing.Size(122, 56);
             this.listnachstation.TabIndex = 40;
             this.listnachstation.Click += new System.EventHandler(this.listclickautocompletenach);
             // 
             // textBoxnach
             // 
-            this.textBoxnach.Location = new System.Drawing.Point(352, 57);
-            this.textBoxnach.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxnach.Location = new System.Drawing.Point(264, 46);
             this.textBoxnach.Name = "textBoxnach";
-            this.textBoxnach.Size = new System.Drawing.Size(161, 22);
+            this.textBoxnach.Size = new System.Drawing.Size(122, 20);
             this.textBoxnach.TabIndex = 39;
             this.textBoxnach.TextChanged += new System.EventHandler(this.txtchangenachstation);
             // 
+            // buttonlocation
+            // 
+            this.buttonlocation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonlocation.BackgroundImage")));
+            this.buttonlocation.Location = new System.Drawing.Point(495, 27);
+            this.buttonlocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonlocation.Name = "buttonlocation";
+            this.buttonlocation.Size = new System.Drawing.Size(60, 56);
+            this.buttonlocation.TabIndex = 41;
+            this.buttonlocation.UseVisualStyleBackColor = true;
+            this.buttonlocation.Click += new System.EventHandler(this.buttonlocation_Click);
+            // 
+            // buttonmail
+            // 
+            this.buttonmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonmail.BackgroundImage")));
+            this.buttonmail.Location = new System.Drawing.Point(495, 98);
+            this.buttonmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonmail.Name = "buttonmail";
+            this.buttonmail.Size = new System.Drawing.Size(69, 63);
+            this.buttonmail.TabIndex = 42;
+            this.buttonmail.UseVisualStyleBackColor = true;
+            this.buttonmail.Click += new System.EventHandler(this.buttonmail_Click);
+            // 
             // Verbindungen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.ClientSize = new System.Drawing.Size(598, 366);
+            this.Controls.Add(this.buttonmail);
+            this.Controls.Add(this.buttonlocation);
             this.Controls.Add(this.listnachstation);
             this.Controls.Add(this.textBoxnach);
             this.Controls.Add(this.listvonStation);
@@ -243,7 +263,7 @@
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.TimePicker);
             this.Controls.Add(this.buttonswitch);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Verbindungen";
             this.Text = "Verbindungen";
             this.ResumeLayout(false);
@@ -272,6 +292,8 @@
         private System.Windows.Forms.TextBox textBoxvon;
         private System.Windows.Forms.ListBox listnachstation;
         private System.Windows.Forms.TextBox textBoxnach;
+        private System.Windows.Forms.Button buttonlocation;
+        private System.Windows.Forms.Button buttonmail;
     }
 }
 

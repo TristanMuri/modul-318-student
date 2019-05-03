@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Verbindungen : Form
     {
+        //Variabeln
         List<string> fromStationId = new List<string>();
         List<Station> stationList = new List<Station>();
         Transport transport = new Transport();
@@ -56,9 +58,9 @@ namespace WindowsFormsApp1
 
         private void vonStation(string location, ListBox listvonstation)
         {
-            //Lokale Variablen
             Stations station = transport.GetStations(location);
             List<string> vonStationList = new List<string>();
+
             foreach (var item in station.StationList)
             {
                 if (!string.IsNullOrEmpty(item.Name))
@@ -78,9 +80,9 @@ namespace WindowsFormsApp1
 
         private void nachStation(string location, ComboBox comBoxnach)
         {
-            //Lokale Variabeln
             Stations station = transport.GetStations(location);
             List<string> nachStationList = new List<string>();
+
             foreach (var item in station.StationList)
             {
                 if (!string.IsNullOrEmpty(item.Name))
@@ -159,6 +161,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        //Wechsel von VonStation und Nachstation
         private void buttonswitch_Click(object sender, EventArgs e)
         {
             string bswitch = textBoxnach.Text;
@@ -171,11 +174,14 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
+        //Öffnet Abfahrtstaffel Form
         private void buttonabfahrtstafel_Click(object sender, EventArgs e)
         {
             Abfahrtstafel f2 = new Abfahrtstafel();
             f2.ShowDialog();
         }
+
+        //Auto complete und Auto fill
 
         private void txtchangevonstation(object sender, EventArgs e)
         {
@@ -201,6 +207,18 @@ namespace WindowsFormsApp1
         private void listclickautocompletevon(object sender, EventArgs e)
         {
             textBoxvon.Text = listvonStation.GetItemText(listvonStation.SelectedItem);
+        }
+
+        //Mail und location
+
+        private void buttonlocation_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://google.com/maps");
+        }
+
+        private void buttonmail_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://google.com/gmail");
         }
     }
 }

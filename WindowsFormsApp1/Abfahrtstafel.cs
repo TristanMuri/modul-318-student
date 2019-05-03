@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Abfahrtstafel : Form
     {
+        //Variabeln
         List<string> fromStationId = new List<string>();
         List<Station> stationList = new List<Station>();
         Transport transport = new Transport();
@@ -33,7 +34,7 @@ namespace WindowsFormsApp1
                 this.listStation.SelectedIndex = 0;
         }
 
-        //Funktion
+        //Funktionen 
         private void StationSuchen(ListBox aktuelleListBox, TextBox aktuelleTextBox, string gesuchteStation)
         {
             Stations Station = transport.GetStations(gesuchteStation);
